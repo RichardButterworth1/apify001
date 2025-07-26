@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: gpt-linkedin-search-service
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    autoDeploy: true
+    envVars:
+      - key: APIFY_TOKEN
+        sync: false
+      - key: APIFY_SEARCH_ACTOR_ID
+        value: apify/google-search-scraper
+      - key: APIFY_PEOPLE_ENRICH_ACTOR_ID
+        value: 2SyF0bVxmgGr8IVCZ
+      - key: PORT
+        value: "3000"
